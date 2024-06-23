@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2_4</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header class="header-page">
+        <h1 class="header-text">Create Account</h1>
+    </header>
+    <main class="main-page">
+        <div class="main-info">
+            <div class="name-block">
+                <form class="name-form">
+                    <div class="first-name-block">
+                        <h3 class="header-first-name">First name*</h3>
+                        <input oninput="isFirstNameValid(this)" type="text" id="first-name" name="first-name" placeholder="Enter your first name" class="first-name">
+                    </div>
+                    <div class="last-name-block">
+                        <h3 class="header-last-name">Last name*</h3>
+                        <input oninput="isFirstNameValid(this)" type="text" id="last-name" name="last-name" placeholder="Enter your last name" class="last-name">
+                    </div>
+                </form>
+            </div>
+            <div class="email-block">
+                <form class="email-form">
+                    <div class="email">
+                        <h3 class="header-email">Email*</h3>
+                        <input id="input-email" type="email" name="email" placeholder="Enter your email"
+                            class="input-email" oninput="isEmailValid(this)">
+                    </div>
+                </form>
+            </div>
+            <div class="password-block">
+                <form class="password-form">
+                    <div class="password">
+                        <h3 class="header-password">Password*</h3>
+                        <input id="password" type="password" name="password" placeholder="Enter your password"
+                            class="first-password"
+                            oninput="isPasswordCorrect(document.getElementById('confirm-password'), this)">
+                    </div>
+                    <div class="repeat-password">
+                        <h3 class="header-repeat-password">Confirm password*</h3>
+                        <input id="confirm-password" type="password" name="confirm-password"
+                            placeholder="Confirm your password" class="confirm-password"
+                            oninput="isPasswordCorrect(this, document.getElementById('password'))">
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+        <div class="info">
+            <div class="chose-block">
+                <div class="gender-block">
+                    <h3 class="headre-gender">Gender</h3>
+                    <div class="gender">
+                        <div class="male">
+                            <p class="male-name">Male</p>
+                            <input type="radio" id="male-gender" name="color" value="red">
+                            <label for="male-gender"></label>
+                        </div>
+                        <div class="female">
+                            <p class="female-name">Female</p>
+                            <input type="radio" id="female-gender" name="color" value="red">
+                            <label for="female-gender"></label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="hobbies-block">
+                    <h3 class="header-hobbies">Hobbies</h3>
+                    <div class="hobbies">
+                        <div class="ms-block">
+                            <div class="music">
+                                <p class="music-text">Music</p>
+                                <input type="checkbox" id="music-hobby" name="music" value="music" class="custom-checkbox">
+                                <label for="music-hobby"></label>
+                            </div>
+                            <div class="sport">
+                                <p class="sport-text">Sport</p>
+                                <input type="checkbox" id="sport-hobby" name="sport" value="sport" class="custom-checkbox">
+                                <label for="sport-hobby"></label>
+                            </div>
+                        </div>
+                        <div class="tm-block">
+                            <div class="travel">
+                                <p class="travel-text">Travel</p>
+                                <input type="checkbox" id="travel-hobby" name="travel" value="travel" class="custom-checkbox">
+                                <label for="travel-hobby"></label>
+                            </div>
+                            <div class="movies">
+                                <p class="movies-text">Movies</p>
+                                <input type="checkbox" id="movies-hobby" name="movies" value="movies" class="custom-checkbox">
+                                <label for="movies-hobby"></label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="sourse">
+                <div class="sourse-block">
+                    <h3 class="header-sourse">Sourse of Income</h3>
+                    <select name="select" class="select">
+                        <option value="value1">Unemployed</option>
+                        <option value="value2" selected>Employed</option>
+                    </select>
+                </div>
+                <div class="income-block">
+                    <h3 header-income>Income</h3>
+                    <div class="range-income">
+                        <input oninput="setIncome(this.value)" type="range" id="income" name="color-range" min="0" max="100000" step="number">
+                        <label for="income" class="label-income"><output id="value"></output></label>
+                    </div>
+                </div>
+            </div>
+            <div class="pa-block">
+
+                <div class="picture-block">
+                    <h3>Upload Profile Picture</h3>
+                    <form action="/form/sumbit" method="get" class="form-file">
+                        <label class="label">
+                          <input type="file" id="file" accept="image/png, image/gif, image/jpeg"/>
+                          <span>Choose file</span>
+                        </label>
+                        <label for="file" class="lable-file">No file chosen</label>
+                      </form>
+                </div>
+                <div class="age-block">
+                    <h3 class="header-age">Age</h3>
+                    <input id="age" type="number" name="age" placeholder="Enter your age" class="age"
+                        oninput="isAgeCorrect(this)">
+                </div>
+            </div>
+            <div class="bio-block">
+                <div class="header-bio-block">
+                    <h3 class="header-bio">Bio</h3>
+                </div>
+                <div class="bio-place">
+                    <textarea name="bio" class="bio" placeholder="Tell about yourself"></textarea>
+                    <button class="btn-bio" type="submit" name="btn-bio" id="btn-bio" onclick="submit()">Create</button>
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+</body>
+
+</html>
